@@ -1,4 +1,9 @@
 import styles from '../styles/door.module.css'
+import DoorModel from '../model/door'
+
+interface DoorProps {
+  door: DoorModel
+}
 
 const Door = (props) => {
   return (
