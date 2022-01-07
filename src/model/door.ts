@@ -20,6 +20,8 @@ export default class DoorModel {
   }
 
   get selected() {
+    if (this.open) return false
+
     return this.#selected
   }
 
@@ -27,8 +29,8 @@ export default class DoorModel {
     return this.#open
   }
 
-  selectDoor(value) {
-    const selected = value || !this.selected
+  selectDoor(value?: boolean) {
+    const selected = value !== undefined ? value : !this.selected
 
     return new DoorModel(this.number, this.hasGift, selected, this.open)
   }
