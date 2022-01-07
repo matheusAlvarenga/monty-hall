@@ -1,0 +1,15 @@
+.gift {
+  display: flex;
+}
+
+.top {
+  width: 100px;
+  height: 25px;
+  background-color: #7aa944;
+}
+
+.body {
+  width: 90px;
+  height: 60px;
+  background-color: #5c7e32;
+}
