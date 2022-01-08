@@ -8,11 +8,14 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const Game = () => {
-  const {query: { door_number, selected }} = useRouter()
+  const {query: { door_number, selected }, push} = useRouter()
 
   const [doors, setDoors] = useState([])
 
   useEffect(() => {
+    if(+door_number < 3 || +door_number > 100 || +selected < 1 || +selected > +door_number )
+      push('/')
+
     setDoors(createDoorsArray(+door_number, +selected))
   },[door_number, selected])
 
